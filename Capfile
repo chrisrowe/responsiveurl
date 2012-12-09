@@ -1,7 +1,7 @@
 # cap -T for command list
 
 set :project_name, File.basename(Dir.getwd)
-set :domain_name, "responsivedomainname.co.uk"
+set :domain_name, "responsiveurl.co.uk"
 
 # set :db_user, ""
 # set :db_pass, ""
