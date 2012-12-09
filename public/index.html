@@ -21,7 +21,11 @@
         function adjustURL() {
             width = $(this).width();
             usepath = Math.floor((((width/full)-.3)*16));
-            if (usepath < 0) usepath = 0
+            if (usepath < 0) {
+                if (window.location.hostname != "rspnsvurl.co.uk") window.location = "http://rspnsvurl.co.uk";
+            }else{
+                if (window.location.hostname != "responsiveurl.co.uk") window.location = "http://responsiveurl.co.uk";
+            }
             if (usepath != old_usepath) {
                 history.pushState(null, null, paths[usepath]);
                 old_usepath = usepath;
@@ -36,7 +40,7 @@
     </script>
     <style>
         * { font-family:sans-serif;}
-        code { background:gold; }
+        code { background:LemonChiffon; padding:0 3px; }
         a { color:blue; }
         a:hover{ background:blue; color:white; }
     </style>
@@ -55,8 +59,12 @@
         <li>Dates are ripe for this sort of thing - <code>yoururl.com/blog/archive/month/january/18/</code> could shrink down to <code>yoururl.com/blog/01/18</code></li>
         <li>Your team pages - <code>yoururl.com/about-us/team/web/chris-rowe</code> could be <code>yoururl.com/about/chris</code></li>
         <li>Your contact page? - <code>yoururl.com/send-us-an-enquiry-email</code> down to <code>yoururl.com/contact</code></li>
+        <li>WWWhat? - <code>www.yoururl.com</code> clean it up to <code>yoururl.com</code></li>
     </ul>
     <em>Think of the possibilities&hellip;</em>
+
+    <h2>How?</h2>
+    <p>First, we measure your screen width, then your browser width and with a bit of maths, work out which URL will best fit in the visible address bar. Then, using <a href="http://diveintohtml5.info/history.html">history.pushState</a> we update the URL. (So you'll need a half decent browser for it to work)</p>
 
     <h3>Seriously?</h3>
     <p><a href="http://www.youtube.com/watch?v=2Z4m4lnjxkY">Hahaha, no</a>. This is an absolutely terrible idea, please don't ever do this! You should however definitely <a href="http://twitter.com/chrisrowe">follow me on Twitter</a></p>
