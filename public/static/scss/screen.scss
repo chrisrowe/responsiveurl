@@ -1,0 +1,79 @@
+@import "reset";
+
+html {
+    font-size:62.5%;
+}
+
+body {
+    background:#000 url("/static/images/bg.png");
+    color:#fff;
+    font-family: "jubilat",sans-serif;
+    font-size:2.4rem;
+    margin:0 auto;
+    max-width:700px;
+    padding:0 20px 3rem;
+
+    @media only screen and (max-width : 500px) {
+        font-size:1.8rem;
+    }
+
+}
+
+p {
+    margin-bottom:2rem;
+
+    @media only screen and (max-width : 500px) {
+        line-height:2.8rem;
+    }
+}
+
+h1,
+h2,
+h3 {
+    color:#ff006a;
+    font-family: "brandon-grotesque",sans-serif;
+    font-size:3.2rem;
+    margin:2.4rem 0 1rem;
+}
+
+h1 {
+    font-size:6rem;
+    margin-left:-5px;
+    text-transform:uppercase;
+    width:85%;
+}
+
+strong {
+    font-weight:600;
+}
+
+code {
+    background-color:rgba(#ff006a,.3);
+    padding:0 5px;
+}
+
+li {
+    border-left:3px solid #ff006a;
+    font-size:1.8rem;
+    margin:1.5rem 0;
+    padding-left:10px;
+    padding-bottom:0.4rem;
+}
+
+a {
+    background-color:rgba(#ff006a,.2);
+    border-bottom:5px solid rgba(#ff006a,.3);
+    color:#fff;
+    text-decoration:none;
+
+    &:hover,
+    &:focus {
+        background-color:rgba(#ff006a,.4);
+    }
+}
+
+img {
+    display:inline;
+    height:3.6rem;
+    vertical-align:-1.2rem;
+}

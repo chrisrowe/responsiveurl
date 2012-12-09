@@ -1,73 +1,88 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script>
-        var paths = [], full = screen.width, usepath, old_usepath;
+<html lang="en">
+    <head>
 
-        paths[0] = "/";
-        paths[1] = "/rspnsv/url/";
-        paths[2] = "/responsive/url/";
-        paths[3] = "/responsive/dont/forget/url/";
-        paths[4] = "/making/responsive/dont/forget/url/";
-        paths[5] = "/making/everything/responsive/dont/forget/url/";
-        paths[6] = "/making/everything/responsive/dont/forget/the/url/";
-        paths[7] = "/were/making/everything/responsive/dont/forget/the/url/";
-        paths[8] = "/while/were/making/everything/responsive/dont/forget/the/url/";
-        paths[9] = "/while/were/making/everything/responsive/lets/not/forget/the/url/";
-        paths[10] = "/while/were/making/every/damn/thing/responsive/lets/not/forget/the/url/";
-        paths[11] = "/while/were/making/every/damn/thing/responsive/lets/not/forget/about/the/url/";
+        <!-- META -->
+        <meta charset="utf-8" />
+        <meta name="author" content="Chris Rowe - freshsolve.com" />
+        <meta name="description" content="Why not make your URLs responsive?" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        function adjustURL() {
-            width = $(this).width();
-            usepath = Math.floor((((width/full)-.3)*16));
-            if (usepath < 0) {
-                if (window.location.hostname != "rspnsvurl.co.uk") window.location = "http://rspnsvurl.co.uk";
-            }else{
-                if (window.location.hostname != "responsiveurl.co.uk") window.location = "http://responsiveurl.co.uk";
-            }
-            if (usepath != old_usepath) {
-                history.pushState(null, null, paths[usepath]);
-                old_usepath = usepath;
-            }
-        }
-        $(window).resize(function (){
-            adjustURL();
-        });
-        $(document).ready(function (){
-            adjustURL();
-        });
-    </script>
-    <style>
-        * { font-family:sans-serif;}
-        code { background:LemonChiffon; padding:0 3px; }
-        a { color:blue; }
-        a:hover{ background:blue; color:white; }
-    </style>
-</head>
-<body>
+        <!-- TITLE -->
+        <title>ResponsiveURL.co.uk - Why not make your URLs responsive?</title>
 
-    <h1>Responsive domain name</h1>
+        <!-- CSS -->
+        <link rel="stylesheet" href="/static/css/screen.css" />
 
-    <h2>What's this all about</h2>
-    <p>We're currently obsessed with making everything responsive, but haven't we forgotten something? That's right, what about our URLs? <strong>Resize your browser now</strong> and see a responsive URL in action. But why stop there what about other things ourside our HTML canvas, our &lt;title&gt; tags and maybe even our favicons?</p>
+        <!-- ICONS -->
+        <link rel="icon" type="image/png" href="/static/images/favicon.png" />
 
-    <h2>Examples</h2>
-    <p>The URL you're on now is obviously just for demonstration purposes but here's a few real world examples you could use...</p>
-    <ul>
-        <li>Blog post URLs could shrink to their IDs - <code>yoururl.com/blog/post/example-slug-here</code> could go to <code>yoururl.com/blog/18</code></li>
-        <li>Dates are ripe for this sort of thing - <code>yoururl.com/blog/archive/month/january/18/</code> could shrink down to <code>yoururl.com/blog/01/18</code></li>
-        <li>Your team pages - <code>yoururl.com/about-us/team/web/chris-rowe</code> could be <code>yoururl.com/about/chris</code></li>
-        <li>Your contact page? - <code>yoururl.com/send-us-an-enquiry-email</code> down to <code>yoururl.com/contact</code></li>
-        <li>WWWhat? - <code>www.yoururl.com</code> clean it up to <code>yoururl.com</code></li>
-    </ul>
-    <em>Think of the possibilities&hellip;</em>
+        <!-- TYPEKIT -->
+        <script src="//use.typekit.net/lap6fts.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
 
-    <h2>How?</h2>
-    <p>First, we measure your screen width, then your browser width and with a bit of maths, work out which URL will best fit in the visible address bar. Then, using <a href="http://diveintohtml5.info/history.html">history.pushState</a> we update the URL. (So you'll need a half decent browser for it to work)</p>
+    </head>
 
-    <h3>Seriously?</h3>
-    <p><a href="http://www.youtube.com/watch?v=2Z4m4lnjxkY">Hahaha, no</a>. This is an absolutely terrible idea, please don't ever do this! You should however definitely <a href="http://twitter.com/chrisrowe">follow me on Twitter</a></p>
+    <body dir="ltr">
 
-</body>
+        <h1>ResponsiveURL.co.uk</h1>
+        <p>It feels like we're obsessed with making everything responsive at the moment, but haven't we forgotten something? That's right, what about our URLs? <strong>Resize your browser now</strong> and see a responsive URL in action.</p>
+
+        <h2>Examples</h2>
+        <p>The URL you're on now is obviously just for demonstration purposes but here's a few real world examples you could use...</p>
+        <ul>
+            <li><strong>Blog post URLs shrink to their IDs</strong><br/>
+                <code>yoururl.com/blog/post/example-slug-here</code> could go to <code>yoururl.com/blog/18</code></li>
+            <li><strong>Dates are ripe for this sort of thing!</strong><br/>
+                <code>yoururl.com/blog/archive/january/18/</code> squeezed to <code>yoururl.com/blog/01/18</code></li>
+            <li><strong>Your team pages</strong><br/>
+                <code>yoururl.com/about-us/team/web/chris-rowe</code> could be <code>yoururl.com/about/chris</code></li>
+            <li><strong>Your contact page</strong><br/>
+                <code>yoururl.com/send-us-an-enquiry-email</code> down to <code>yoururl.com/contact</code></li>
+            <li><strong>WWWhat?</strong><br/>
+                <code>www.yoururl.com</code> clean it up to <code>yoururl.com</code></li>
+        </ul>
+        <em>Think of the possibilities&hellip;</em>
+
+        <h2>How it works</h2>
+        <p>First, we measure your screen width, then your browser width and with a bit of maths, work out which URL will fit best in the address bar. Then using <a href="http://diveintohtml5.info/history.html">history.pushState</a> we update the URL. (<small>So you'll need a half decent browser for that to work</small>). But why stop there? What about the other bits outside our HTML canvas; our &lt;title&gt; tags and maybe even our favicons?</p>
+
+        <h3>Seriously?</h3>
+        <p><a href="http://www.youtube.com/watch?v=2Z4m4lnjxkY" title="ಠ_ಠ">Hahaha, no</a>. This is an absolutely terrible idea, please don't ever do this! You should however definitely <a href="http://twitter.com/chrisrowe">follow me on Twitter</a></p>
+        <p>This is just a daft idea by <a class="credit" href="http://chrisrowe.net"><img src="http://chrisrowe.net/static/images/avatar.jpg"> Chris Rowe</a></p>
+
+        <!-- JS -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="/static/js/jquery.fittext.js"></script>
+        <script src="/static/js/app.js"></script>
+
+        <!-- GAUGES -->
+        <script type="text/javascript">
+            var _gauges = _gauges || [];
+            (function() {
+                var t   = document.createElement('script');
+                t.type  = 'text/javascript';
+                t.async = true;
+                t.id    = 'gauges-tracker';
+                t.setAttribute('data-site-id', '50c4a2e2f5a1f5531a000001');
+                t.src = '//secure.gaug.es/track.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(t, s);
+            })();
+        </script>
+
+        <!-- ANALYTICS -->
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-268194-3']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+
+    </body>
+
 </html>
