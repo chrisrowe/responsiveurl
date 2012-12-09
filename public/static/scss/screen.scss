@@ -13,7 +13,7 @@ body {
     max-width:700px;
     padding:0 20px 3rem;
 
-    @media only screen and (max-width : 500px) {
+    @media only screen and (max-width : 700px) {
         font-size:1.8rem;
     }
 
@@ -22,7 +22,7 @@ body {
 p {
     margin-bottom:2rem;
 
-    @media only screen and (max-width : 500px) {
+    @media only screen and (max-width : 700px) {
         line-height:2.8rem;
     }
 }
@@ -33,12 +33,11 @@ h3 {
     color:#ff006a;
     font-family: "brandon-grotesque",sans-serif;
     font-size:3.2rem;
-    margin:2.4rem 0 1rem;
+    margin:2.4rem 0 1rem -15px;
 }
 
 h1 {
     font-size:6rem;
-    margin-left:-5px;
     text-transform:uppercase;
     width:85%;
 }
