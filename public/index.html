@@ -1,9 +1,65 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>
-    $(window).resize(function (e){
-        wholepath = "why-not-go-the-whole-hog-and-make-your-whole-domain-name-responsive-trololol?";
-        width = $(this).width();
-        width = Math.floor(width/20);
-        history.pushState(null, null, wholepath.slice(0,width));
-    });
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        var paths = [], full = screen.width, usepath, old_usepath;
+
+        paths[0] = "/";
+        paths[1] = "/rspnsv/url/";
+        paths[2] = "/responsive/url/";
+        paths[3] = "/responsive/dont/forget/url/";
+        paths[4] = "/making/responsive/dont/forget/url/";
+        paths[5] = "/making/everything/responsive/dont/forget/url/";
+        paths[6] = "/making/everything/responsive/dont/forget/the/url/";
+        paths[7] = "/were/making/everything/responsive/dont/forget/the/url/";
+        paths[8] = "/while/were/making/everything/responsive/dont/forget/the/url/";
+        paths[9] = "/while/were/making/everything/responsive/lets/not/forget/the/url/";
+        paths[10] = "/while/were/making/every/damn/thing/responsive/lets/not/forget/the/url/";
+        paths[11] = "/while/were/making/every/damn/thing/responsive/lets/not/forget/about/the/url/";
+
+        function adjustURL() {
+            width = $(this).width();
+            usepath = Math.floor((((width/full)-.3)*16));
+            if (usepath < 0) usepath = 0
+            if (usepath != old_usepath) {
+                history.pushState(null, null, paths[usepath]);
+                old_usepath = usepath;
+            }
+        }
+        $(window).resize(function (){
+            adjustURL();
+        });
+        $(document).ready(function (){
+            adjustURL();
+        });
+    </script>
+    <style>
+        * { font-family:sans-serif;}
+        code { background:gold; }
+        a { color:blue; }
+        a:hover{ background:blue; color:white; }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive domain name</h1>
+
+    <h2>What's this all about</h2>
+    <p>We're currently obsessed with making everything responsive, but haven't we forgotten something? That's right, what about our URLs? <strong>Resize your browser now</strong> and see a responsive URL in action. But why stop there what about other things ourside our HTML canvas, our &lt;title&gt; tags and maybe even our favicons?</p>
+
+    <h2>Examples</h2>
+    <p>The URL you're on now is obviously just for demonstration purposes but here's a few real world examples you could use...</p>
+    <ul>
+        <li>Blog post URLs could shrink to their IDs - <code>yoururl.com/blog/post/example-slug-here</code> could go to <code>yoururl.com/blog/18</code></li>
+        <li>Dates are ripe for this sort of thing - <code>yoururl.com/blog/archive/month/january/18/</code> could shrink down to <code>yoururl.com/blog/01/18</code></li>
+        <li>Your team pages - <code>yoururl.com/about-us/team/web/chris-rowe</code> could be <code>yoururl.com/about/chris</code></li>
+        <li>Your contact page? - <code>yoururl.com/send-us-an-enquiry-email</code> down to <code>yoururl.com/contact</code></li>
+    </ul>
+    <em>Think of the possibilities&hellip;</em>
+
+    <h3>Seriously?</h3>
+    <p><a href="http://www.youtube.com/watch?v=2Z4m4lnjxkY">Hahaha, no</a>. This is an absolutely terrible idea, please don't ever do this! You should however definitely <a href="http://twitter.com/chrisrowe">follow me on Twitter</a></p>
+
+</body>
+</html>
