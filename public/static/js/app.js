@@ -20,11 +20,15 @@ function adjustURL() {
     width = $(this).width();
     usepath = Math.floor((((width/full)-.3)*16));
     if (usepath < 0 || full < 400) {
-        if (window.location.hostname != "rspnsvurl.co.uk") window.location = "http://rspnsvurl.co.uk";
-        return false;
+        if (window.location.hostname != "rspnsvurl.co.uk") {
+            window.location = "http://rspnsvurl.co.uk";
+            return false;
+        }
     }else{
-        if (window.location.hostname != "responsiveurl.co.uk") window.location = "http://responsiveurl.co.uk";
-        return false;
+        if (window.location.hostname != "responsiveurl.co.uk") {
+            window.location = "http://responsiveurl.co.uk";
+            return false;
+        }
     }
     if (usepath != old_usepath && window.location.hostname != "rspnsvurl.co.uk") {
         history.pushState(null, null, paths[usepath]);
