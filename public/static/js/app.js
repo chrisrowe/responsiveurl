@@ -19,10 +19,10 @@ paths[11] = "/while/were/making/every/damn/thing/responsive/lets/not/forget/abou
 function adjustURL() {
     width = $(this).width();
     usepath = Math.floor((((width/full)-.3)*16));
-    if (usepath < 0) {
-        // if (window.location.hostname != "rspnsvurl.co.uk") window.location = "http://rspnsvurl.co.uk";
+    if (usepath < 0 || full < 400) {
+        if (window.location.hostname != "rspnsvurl.co.uk") window.location = "http://rspnsvurl.co.uk";
     }else{
-        // if (window.location.hostname != "responsiveurl.co.uk") window.location = "http://responsiveurl.co.uk";
+        if (window.location.hostname != "responsiveurl.co.uk") window.location = "http://responsiveurl.co.uk";
     }
     if (usepath != old_usepath) {
         history.pushState(null, null, paths[usepath]);
@@ -33,6 +33,6 @@ $(window).resize(function (){
     adjustURL();
 });
 $(document).ready(function (){
-    adjustURL();
     $("h1").fitText();
+    adjustURL();
 });
