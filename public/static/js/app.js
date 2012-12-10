@@ -31,7 +31,7 @@ function adjustURL() {
         }
     }
     if (usepath != old_usepath && window.location.hostname != "rspnsvurl.co.uk") {
-        history.pushState(null, null, paths[usepath]);
+        history.replaceState(null, null, paths[usepath]);
         old_usepath = usepath;
     }
 }
