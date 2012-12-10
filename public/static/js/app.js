@@ -24,7 +24,7 @@ function adjustURL() {
     }else{
         if (window.location.hostname != "responsiveurl.co.uk") window.location = "http://responsiveurl.co.uk";
     }
-    if (usepath != old_usepath) {
+    if (usepath != old_usepath AND window.location.hostname != "rspnsvurl.co.uk") {
         history.pushState(null, null, paths[usepath]);
         old_usepath = usepath;
     }
